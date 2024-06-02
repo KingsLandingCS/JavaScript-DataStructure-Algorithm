@@ -5,7 +5,6 @@ function double(arr) {
     }
     console.log(newArr);
     return newArr;
-
 }
 
 double([1, 2, 3]);
