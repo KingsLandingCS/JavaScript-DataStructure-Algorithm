@@ -19,7 +19,7 @@ function charCount(str) {
     for (let char of str) {
         char = char.toLowerCase();
         if (/[a-z0-9]/.test(char)) {
-            obj[char] = ++obj[char] || 1;
+            obj[char] = ++obj[char] || 1; //if the object is truthy add 1 else set it to 1;
         }
     }
     return obj;
