@@ -12,4 +12,5 @@ function charCount(str) {
     return result;
 }
 
+
 console.log(charCount("Hi There"));
