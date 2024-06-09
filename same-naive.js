@@ -8,7 +8,10 @@ function same(arr1, arr2) {
         if (correctIndex === -1) {
             return false;
         }
+        console.log(arr2);
         arr2.splice(correctIndex, 1);
     }
-    return trues
+    return true;
 }
+
+same([1, 2, 3, 2], [9, 1, 4, 4]);
