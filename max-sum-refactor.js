@@ -8,6 +8,7 @@ function maxSubarraySum(arr, num) {
     // Calculate the sum of the first 'num' elements
     for (let i = 0; i < num; i++) {
         maxSum += arr[i];  // Add the current element to maxSum
+
     }
 
     tempSum = maxSum;  // Set the initial window sum to maxSum
@@ -16,7 +17,8 @@ function maxSubarraySum(arr, num) {
     // Slide the window across the array                                                
     for (let i = num; i < arr.length; i++) {
         tempSum = tempSum - arr[i - num] + arr[i];
-        maxSum = Math.max(maxSum, tempSum);           // stroing max sum                                                                                                                      
+        maxSum = Math.max(maxSum, tempSum);           // stroing max sum
+        console.log(maxSum);
     }
 
     return maxSum;

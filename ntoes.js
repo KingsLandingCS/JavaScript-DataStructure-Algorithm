@@ -23,6 +23,17 @@
 // Update tempSum: tempSum = tempSum - arr[1] + arr[4]
 // Calculation: tempSum = 17 - 6 + 1 = 12
 
+
+// Second Slide (i = 5):
+
+// Previous Window: [6, 9, 2]
+// New Window: [9, 2, 1]
+// Element Sliding Out: arr[4 - 3] = arr[1] = 6
+// Element Sliding In: arr[4] = 1
+// Update tempSum: tempSum = tempSum - arr[1] + arr[4]
+// Calculation: tempSum = 17 - 6 + 1 = 12
+
+
 // Slide Right (i = 6):
 
 // New Window: [1, 8, 5]
@@ -32,6 +43,14 @@
 // tempSum = 11 - 2 + 5 = 14
 // Update maxSum = Math.max(17, 14) = 17
 
+// Slide Right (i = 7):
+
+// New Window: [1, 8, 5]
+// Remove arr[3] = 2 (element sliding out).
+// Add arr[6] = 5 (element sliding in).
+// tempSum = tempSum - arr[3] + arr[6]
+// tempSum = 11 - 2 + 5 = 14
+// Update maxSum = Math.max(17, 14) = 17
 
 
 // Slide Right (i = 8):
