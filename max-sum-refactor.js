@@ -8,7 +8,6 @@ function maxSubarraySum(arr, num) {
     // Calculate the sum of the first 'num' elements
     for (let i = 0; i < num; i++) {
         maxSum += arr[i];  // Add the current element to maxSum
-
     }
 
     tempSum = maxSum;  // Set the initial window sum to maxSum
