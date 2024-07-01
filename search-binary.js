@@ -15,6 +15,7 @@ function binarySearch(arr, elem) {
         middle = Math.floor((start + end) / 2);
     }
     console.log(start, middle, end);
+    return middle;
 }
 
 console.log(binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 28));
