@@ -8,12 +8,37 @@ function naiveSearch(long, short) {
                 break;
             }
             if (j === short.length - 1) {
-                console.log("Found One!");
                 count++;
+                console.log("Found One!");
             }
         }
     }
-    return count;
+    return console.log(count);
 }
 
 naiveSearch("lorie loled", "lol");
+
+
+
+// Outer Loop Iterations
+// When i = 0:
+
+// Starting position in long is 0.
+// Inner loop checks:
+// j = 0: Compare short[0] ('l') with long[0 + 0] ('l') → match
+// j = 1: Compare short[1] ('o') with long[0 + 1] ('o') → match
+// j = 2: Compare short[2] ('l') with long[0 + 2] ('r') → mismatch
+// Mismatch found, prints "BREAK!" and exits inner loop.
+
+
+
+
+// Purpose of count
+// Counting Occurrences:
+
+// The primary purpose of count is to count the number of successful matches of the short string in the long string.
+// Each time the inner loop completes without breaking (i.e., a full match is found), count is incremented.
+// Output:
+
+// After the function has checked all possible positions in long, count will hold the total number of times short appears in long.
+// The function returns count as the result.
