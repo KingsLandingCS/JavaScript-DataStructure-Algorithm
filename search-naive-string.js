@@ -13,10 +13,13 @@ function naiveSearch(long, short) {
             }
         }
     }
-    return console.log(count);
+    return console.log(`The string "${short}" was found ${count} times in the string "${long}"`);  // ===> template literals
+
+
+    // console.log("The string \"" + short + "\" was found " + count + " times in the string \"" + long + "\""); // ===> without template literals
 }
 
-naiveSearch("lorie loled", "lol");
+naiveSearch("lorie loled loling lolomoa", "lol");
 
 
 
