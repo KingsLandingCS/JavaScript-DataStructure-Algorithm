@@ -9,7 +9,7 @@ function bubbleSort(arr) {                   // Since the i equals to the length
             }
             console.log(arr);
         }
-        console.log(`After ${(i)} iteration of i: ${arr}`);
+        console.log(`After ${i} iteration of i: ${arr}`);
     }
     return arr;
 }
