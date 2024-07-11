@@ -8,12 +8,19 @@ function selectionSort(arr) {
             }
             console.log(`Inner loop comparison: [${arr}], ${arr[j]}, ${arr[lowest]}, ${lowest}`);
         }
-        console.log(`${arr}`);
+
+        console.log(`****************************`);
+
+        console.log(`[${arr}]`);
         console.log(`Swapping To: `);
+
         let temp = arr[i];
         arr[i] = arr[lowest];
         arr[lowest] = temp;
-        console.log(arr);
+
+        console.log(`[${arr}]`);
+
+        console.log(`****************************`);
     }
     return arr;
 }
