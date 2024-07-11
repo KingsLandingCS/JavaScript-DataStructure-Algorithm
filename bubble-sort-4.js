@@ -24,6 +24,9 @@ console.log(bubbleSort([8, 1, 2, 3, 4, 5, 6, 7]));
 
 
 
+
+
+
 // First Iteration of the Outer Loop:
 // The outer loop starts with i = 8 (the length of the array).
 // noSwaps is set to true at the beginning of the outer loop iteration.
