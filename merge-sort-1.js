@@ -6,25 +6,22 @@ function mergeSort(arr1, arr2) {
         if (arr2[j] > arr1[i]) {
             results.push(arr1[i]);
             i++;
-        } else {
-            results.push(arr2[j]);
-            j++;
         }
-
-        while (i < arr1.length) {
-            results.push(arr1[i]);
-            i++;
-        }
-        while (j < arr2.length) {
+        else {
             results.push(arr2[j]);
             j++;
         }
     }
+    while (i < arr1.length) {
+        results.push(arr1[i]);
+        i++;
+    }
+    while (j < arr2.length) {
+        results.push(arr2[j]);
+        j++;
+    }
+
     return results;
 }
 
-console.log(mergeSort([1, 5, 6, 25, 32], [20, 30, 35, 55, 99, 100]));
-
-
-// Time complexity: O(n)
-// Space Complexity: O(1)
+console.log(mergeSort([1, 5, 7, 18, 25], [26, 36, 78, 99, 100, 148, 177]));
