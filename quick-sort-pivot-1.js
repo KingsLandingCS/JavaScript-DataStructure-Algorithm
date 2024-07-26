@@ -19,7 +19,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {    //start = 0: This mean
         }
     }
     // Swap the pivot from the start the swapPoint
-    swap(arr, start, swapIdx);
+    swap(arr, start, swapIdx); // the swapIdx is 3 here because of the manipulation in for loop above, and arr will updated too. Start will be 0 though. There will be final swap call to update the pivot position.
     return `${arr} Pivot: ${pivot} SwapIdx: ${swapIdx}`;
 }
 
