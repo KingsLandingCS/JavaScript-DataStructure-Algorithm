@@ -50,8 +50,6 @@ console.log(quickSort([4, 8, 2, 1, 5, 7, 6, 3]));
 // Quick Sort Call: quickSort([4, 8, 2, 1, 5, 7, 6, 3], 0, 7)
 // Iterations Breakdown
 // 1. First Call to quickSort
-// javascript
-// Copy code
 // quickSort([4, 8, 2, 1, 5, 7, 6, 3], 0, 7);
 // Range: start = 0, end = 7
 // Pivot Function Call: pivot([4, 8, 2, 1, 5, 7, 6, 3], 0, 7)
@@ -111,33 +109,46 @@ console.log(quickSort([4, 8, 2, 1, 5, 7, 6, 3]));
 
 // Right Sub-array: quickSort([3, 2, 1, 4, 5, 7, 6, 8], 4, 7)
 
-// Detailed Iterations for Left Sub-array quickSort([3, 2, 1, 4, 5, 7, 6, 8], 0, 2)
-// Call to pivot for Left Sub-array
-// Initial State:
-// Pivot: 3
-// Array: [3, 2, 1, 4, 5, 7, 6, 8]
-// Swap Index (swapIdx): 0
-// Iteration Details:
+// Second Call to pivot
+// javascript
+// Copy code
+// pivot([3, 2, 1, 4, 5, 7, 6, 8], 0, 2);
+// arr = [3, 2, 1, 4, 5, 7, 6, 8]
+// start = 0
+// end = 2
+// The subarray being considered is [3, 2, 1]
+// Initialization
+// pivot = arr[start] = 3
+// swapIdx = start = 0
+// Iteration Details
+// Iteration 1:
+// i = 1
+// Current element: arr[1] = 2
+// Compare 2 with pivot (3):
+// Since 2 < 3, we increment swapIdx by 1: swapIdx = 1
+// Swap arr[swapIdx] and arr[i] (swap arr[1] and arr[1]): [3, 2, 1, 4, 5, 7, 6, 8]
+// The array remains unchanged because we are swapping the element with itself.
+// Iteration 2:
+// i = 2
+// Current element: arr[2] = 1
+// Compare 1 with pivot (3):
+// Since 1 < 3, we increment swapIdx by 1: swapIdx = 2
+// Swap arr[swapIdx] and arr[i] (swap arr[2] and arr[2]): [3, 2, 1, 4, 5, 7, 6, 8]
+// The array remains unchanged because we are swapping the element with itself.
+// Final Swap
+// After the loop completes, we need to place the pivot element in its correct position.
 
-// Iteration 1 (i = 1):
-
-// Element: 2
-// Condition: 3 > 2 (true)
-// Action: Increment swapIdx to 1, swap 2 with 2 (no visible change).
-// Array: [3, 2, 1, 4, 5, 7, 6, 8]
-// Iteration 2 (i = 2):
-
-// Element: 1
-// Condition: 3 > 1 (true)
-// Action: Increment swapIdx to 2, swap 1 with 1 (no visible change).
-// Array: [3, 2, 1, 4, 5, 7, 6, 8]
-// Final Swap:
-
-// Swap the pivot (3) with the element at swapIdx (1).
-// Array after Final Swap: [1, 2, 3, 4, 5, 7, 6, 8]
-// Pivot Index: 2
-// Recursive Calls for Left Sub-array [1, 2, 3]
-// Left Sub-array: quickSort([1, 2, 3, 4, 5, 7, 6, 8], 0, 1)
+// Swap arr[start] and arr[swapIdx] (swap arr[0] and arr[2]):
+// Array before swap: [3, 2, 1, 4, 5, 7, 6, 8]
+// Array after swap: [1, 2, 3, 4, 5, 7, 6, 8]
+// Result
+// The pivot element 3 is now correctly positioned at index 2.
+// The function returns swapIdx = 2, which is the index of the pivot element.
+// Summary
+// The subarray [3, 2, 1] is partitioned around the pivot 3.
+// After partitioning, the array becomes [1, 2, 3, 4, 5, 7, 6, 8] with 3 correctly placed at index 2.
+// The pivot function returns the pivot index 2, which is used in further recursive calls of the quickSort function to sort the left and right subarrays.
+// I hope this makes the process clearer! If you have any more questions, feel free to ask.
 
 // Right Sub-array: quickSort([1, 2, 3, 4, 5, 7, 6, 8], 3, 2) (Base case, no further action)
 
