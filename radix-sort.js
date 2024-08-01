@@ -22,16 +22,31 @@ function mostDigits(nums) {
 function radixSort(nums) {
     let maxDigitCount = mostDigits(nums);
     for (let k = 0; k < maxDigitCount; k++) {
-        let digitBuckets = Array.from({ length: 10 }, () => []);
+        let digitBuckets = Array.from({ length: 10 }, () => []); // create an array of 10 empty arrays
         for (let i = 0; i < nums.length; i++) {
-            let digit = getDigit(nums[i], k);
-            digitBuckets[digit].push(nums[i]);
+            let digit = getDigit(nums[i], k); // get the digit in position k
+            console.log(`On Interation ${k}, for number ${nums[i]} digit is ${digit}`);
+            digitBuckets[digit].push(nums[i]);  // put the number in the corresponding bucket
+            console.log(`${digitBuckets}`);
         }
-        console.log(digitBuckets);
-        nums = [].concat(...digitBuckets);
-        console.log(nums);
+
+        console.log(`nums after the completion of for loop ${nums}`);
+        nums = [].concat(...digitBuckets); // flattens the array into one array
     }
     return nums;
 }
 
 console.log(radixSort([23, 345, 5467, 12, 2345, 9852])); 
+
+
+
+
+
+// Understanding Buckets
+// In radix sort, buckets are indexed from 0 to 9, corresponding to possible digits in a base-10 system. The digit itself determines the bucket:
+
+// Bucket 0 holds numbers whose relevant digit is 0.
+// Bucket 1 holds numbers whose relevant digit is 1.
+// Bucket 2 holds numbers whose relevant digit is 2.
+// Bucket 3 holds numbers whose relevant digit is 3.
+// And so on up to Bucket 9.
