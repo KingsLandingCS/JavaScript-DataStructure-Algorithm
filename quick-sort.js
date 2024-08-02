@@ -5,7 +5,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {    //start = 0: This mean
     }
 
     // We are assuming the pivot is always the first element
-    let pivot = arr[start]; 
+    let pivot = arr[start];
     let swapIdx = start;
 
     console.log(`Orginal Array: ${arr}`);
@@ -216,3 +216,56 @@ console.log(quickSort([4, 8, 2, 1, 5, 7, 6, 3]));
 
 // Summary
 // The Quick Sort algorithm recursively partitions the array around pivots, sorts the sub-arrays, and combines them to produce a fully sorted array. Each iteration of the pivot function reorders elements around the pivot, and recursive calls ensure that all sub-arrays are sorted. The final result for the example array [4, 8, 2, 1, 5, 7, 6, 3] is [1, 2, 3, 4, 5, 6, 7, 8].
+
+
+
+
+
+// Right Sub Array Recursive call Explanation especially (Pivot)
+
+// Recursive Calls After Partitioning:
+
+// Left Side: quickSort(arr, 0, 2) → Sub-array [3, 2, 1]
+// Right Side: quickSort(arr, 4, 7) → Sub-array [5, 7, 6, 8]
+// Second Call on the Right Sub-array: quickSort(arr, 4, 7)
+// Pivot Function Call: pivot(arr, 4, 7)
+
+// Pivot Element: 5 (at index 4).
+
+// Partitioning Logic:
+
+// Compare 7 with 5: No swap (since 7 > 5).
+// Compare 6 with 5: No swap (since 6 > 5).
+// Compare 8 with 5: No swap (since 8 > 5).
+// Final Swap to Move Pivot:
+
+// Swap pivot 5 with the element at swapIdx (index 4), so no change is made as 5 is already in place.
+// Pivot Index: 4
+
+// Recursive Calls After Partitioning:
+
+// Left Side: quickSort(arr, 4, 3) (no elements to sort)
+// Right Side: quickSort(arr, 5, 7) → Sub-array [7, 6, 8]
+// Third Call on the Right Sub-array of the Right Side: quickSort(arr, 5, 7)
+// Pivot Function Call: pivot(arr, 5, 7)
+
+// Pivot Element: 7 (at index 5).
+
+// Partitioning Logic:
+
+// Compare 6 with 7: Swap 7 and 6 → [3, 2, 1, 4, 5, 6, 7, 8].
+// Compare 8 with 7: No swap (since 8 > 7).
+// Final Swap to Move Pivot:
+
+// Swap pivot 7 with the element at swapIdx (index 6), so no change is made as 7 is already in place.
+// Pivot Index: 6
+
+// Recursive Calls After Partitioning:
+
+// Left Side: quickSort(arr, 5, 5) (single element [6], no sorting needed)
+// Right Side: quickSort(arr, 7, 7) (single element [8], no sorting needed)
+// Summary of Pivot Movement:
+// Initial Call: Pivot 4 moved to index 3.
+// Right Sub-array: Pivot 5 moved to index 4.
+// Sub-array [7, 6, 8]: Pivot 7 moved to index 6.
+// In each recursive call, the pivot is selected as the first element of the sub-array. The partitioning process rearranges the elements based on comparisons with the pivot. Finally, the pivot is swapped into its correct position, which becomes the pivot index for that recursive call. The pivot for the right sub-array [7, 6, 8] becomes 7 because it is the first element of that sub-array and its final position after partitioning is index 6.
