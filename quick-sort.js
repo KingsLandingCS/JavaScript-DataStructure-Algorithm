@@ -26,7 +26,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {    //start = 0: This mean
 
 
 function quickSort(arr, left = 0, right = arr.length - 1) {
-    if (left < right) {
+    if (left < right) { // base case - no more elements to sort in the sub-array at this point in the recursion, there will be a point when when left will be equal to right in the base case, and there will be no more sub-arrays to sort.
         let pivotIndex = pivot(arr, left, right)
         //left
         quickSort(arr, left, pivotIndex - 1);
