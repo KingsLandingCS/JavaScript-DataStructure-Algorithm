@@ -5,7 +5,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {    //start = 0: This mean
     }
 
     // We are assuming the pivot is always the first element
-    let pivot = arr[start];
+    let pivot = arr[start]; 
     let swapIdx = start;
 
     console.log(`Orginal Array: ${arr}`);

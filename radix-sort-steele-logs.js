@@ -25,21 +25,20 @@ function radixSort(nums) {
         let digitBuckets = Array.from({ length: 10 }, () => []); // create an array of 10 empty arrays
         for (let i = 0; i < nums.length; i++) {
             let digit = getDigit(nums[i], k); // get the digit in position k
-            console.log(`On Interation ${k}, for number ${nums[i]} digit is ${digit}`);
+            // console.log(`On Interation ${k}, for number ${nums[i]} digit is ${digit}`);
             digitBuckets[digit].push(nums[i]);  // put the number in the corresponding bucket
-            console.log(`${digitBuckets}`);
+            // console.log(`${digitBuckets}`);
         }
 
-        console.log(`nums after the completion of for loop ${nums}`);
-        // console.log(nums);
-        nums = [].concat(...digitBuckets); // flattens the array into one array
+        // console.log(`nums after the completion of for loop ${nums}`);
+        console.log(digitBuckets);
+        nums = [].concat(...digitBuckets); // flattens the array into one array, ...digitBuckets: The spread operator ... is used to "spread" or "unpack" the elements of an array. When you write ...digitBuckets, it effectively turns the array digitBuckets into its individual elements. So, instead of passing a single array digitBuckets to concat(), the spread operator passes each of the inner arrays as separate arguments to concat(). Specifically, it converts digitBuckets into this: [], [], [12, 9852], [23], [], [345, 2345], [], [5467], [], []
+        console.log(nums);
     }
     return nums;
 }
 
 console.log(radixSort([23, 345, 5467, 12, 2345, 9852]));
-
-
 
 
 
