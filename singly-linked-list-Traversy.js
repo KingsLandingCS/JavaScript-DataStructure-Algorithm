@@ -69,8 +69,17 @@ class LinkedList {
     }
 
     // get at index
-    getAt(index){
-
+    getAt(index) {
+        let current = this.head;
+        let count = 0;
+        while (current) {
+            if (count = index) {
+                console.log(current.data);
+            }
+            count++;
+            current = current.next;
+        }
+        return;
     }
 
     // remove at index
