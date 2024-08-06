@@ -73,13 +73,13 @@ class LinkedList {
         let current = this.head;
         let count = 0;
         while (current) {
-            if (count = index) {
+            if (count == index) {
                 console.log(current.data);
             }
             count++;
             current = current.next;
         }
-        return;
+        return null;
     }
 
     // remove at index
@@ -105,4 +105,6 @@ ll.insertFirst(300);
 ll.insertLast(400);
 
 
-ll.printListData();
+
+// ll.printListData();
+ll.getAt(2);
