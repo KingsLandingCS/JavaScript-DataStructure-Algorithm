@@ -59,3 +59,4 @@ list.push("!");
 list.pop();
 
 console.log(list);
+console.log(list);
