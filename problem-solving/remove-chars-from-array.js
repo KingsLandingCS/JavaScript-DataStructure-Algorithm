@@ -81,3 +81,13 @@ function removeOccurrences(str) {
 // Compares the updated result with the newly updated prevResult.
 // If they are different, it means further removal of "ac" was successful, and the loop continues.
 // If they are the same, it means no more "ac" substrings are present, and the loop stops.
+
+
+
+// do-while loop
+// ==============
+// Execute the Code Block: The code inside the do block runs first, before any condition check.
+// Evaluate the Condition: After executing the code block, the condition in the while statement is evaluated.
+// Repeat or Exit:
+// If the condition evaluates to true, the loop continues, and the code block is executed again.
+// If the condition evaluates to false, the loop exits, and control moves to the code following the loop.
