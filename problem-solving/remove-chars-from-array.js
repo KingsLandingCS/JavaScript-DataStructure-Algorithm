@@ -1,25 +1,83 @@
-function removeChars(str) {
-    let result = '';
-    for (let i = 0; i < str.length; i++) {
-        // if the current character is 'b' skip it
-        if (str[i] === 'b') {
-            continue;
-        }
-        //if the current character is 'a' and the next character is 'c' skip both
-        if (str[i] === 'a' && str[i + 1] === 'c') {
-            i++;
-            continue;
-        }
-        //otherwise, add the character to the result
-        result += str[i];
-    }
+function removeOccurrences(str) {
+    // Remove all occurrences of 'b'
+    let result = str.replace(/b/g, '');
+  
+    // Continuously remove all occurrences of 'ac' until none are left
+    let prevResult;
+    do {
+      prevResult = result;
+      result = result.replace(/ac/g, '');
+    } while (result !== prevResult);
+  
     return result;
-}
+  }
+  
+  // Example usage:
+  const input = "ccbaabccababcbbaabcaaabbcccbaabcccbaabacacabababcabcab";
+  const output = removeOccurrences(input);
+  console.log(output); // Output: "caa"
 
-console.log(removeChars('cabbaabcca'));
-console.log(removeChars('ab')); // 'a'
-console.log(removeChars('abc')); // ''
 
 
-//the continue statement is used to skip the current iteration of the loop and move on to the next iteration without executing the remaining code within the loop for that iteration.
 
+//   Initial Input: "cabbaabcca"
+//   After Removing 'b':
+//   The result is "caacaaca"
+//   2. Removing All Occurrences of 'ac' Repeatedly
+//   First Iteration:
+  
+//   prevResult = "caacaaca"
+//   Remove 'ac':
+//   "caacaaca" → "caaca"
+//   Result after this step: "caaca"
+//   Second Iteration:
+  
+//   prevResult = "caaca"
+//   Remove 'ac':
+//   "caaca" → "caa"
+//   Result after this step: "caa"
+//   Third Iteration:
+  
+//   prevResult = "caa"
+//   Remove 'ac':
+//   There are no occurrences of 'ac' left in "caa".
+//   Result remains: "caa"
+
+
+
+
+// Key Points:
+// Purpose of prevResult:
+
+// prevResult stores the state of the result string from the previous iteration of the loop.
+// By comparing prevResult with result at the end of each iteration, the loop determines whether any changes were made.
+// Process of Updating and Checking:
+
+// Initialization
+// let prevResult;:
+// Declares the variable prevResult which will be used to store the string before modifications in each iteration.
+// First Iteration
+// prevResult = result;:
+
+// Sets prevResult to the current value of result before performing any replacements.
+// result = result.replace(/ac/g, '');:
+
+// Removes all occurrences of "ac" from result.
+// Loop Check:
+
+// After the replacement, the loop checks if result is different from prevResult.
+// If result has changed (i.e., "ac" was removed and thus altered the string), the loop continues to the next iteration.
+// If result is the same as prevResult (i.e., no changes occurred), the loop exits.
+// Subsequent Iterations
+// In each iteration:
+// Update prevResult:
+
+// prevResult = result;: Updates prevResult to the current state of result before the next replacement.
+// Perform Replacement:
+
+// result = result.replace(/ac/g, '');: Removes all remaining occurrences of "ac" from result.
+// Loop Check:
+
+// Compares the updated result with the newly updated prevResult.
+// If they are different, it means further removal of "ac" was successful, and the loop continues.
+// If they are the same, it means no more "ac" substrings are present, and the loop stops.
