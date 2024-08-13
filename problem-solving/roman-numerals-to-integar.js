@@ -21,95 +21,80 @@ function integerToRoman(num) {
 
     // Loop through each symbol, from largest to smallest
     for (let i = 0; i < romanSymbols.length; i++) {
-        const { value, symbol } = romanSymbols[i];
+        const { value, symbol } = romanSymbols[i];   // Extract the value and symbol's values from the current object key
+        console.log(`Symbol: '${symbol}' (${value})\n`);
+
 
         // Append the symbol to the result string while subtracting its value from num
+        console.log(`Check: ${num} >= ${value} (${num >= value})\n`);
         while (num >= value) {
-            result += symbol;
-            num -= value;
+            result += symbol;  // Append the current symbol to the result string
+            num -= value;   // Subtract the current symbol's value from num
         }
-    }
+        console.log(`result after while loop: '${result}', num: ${num}\n`);
 
+    }
     return result;
 }
 
 // Test cases
-console.log(integerToRoman(123));   // Output: 'CXXIII'
 console.log(integerToRoman(1999));  // Output: 'MCMXCIX'
-console.log(integerToRoman(3420));  // Output: 'MMMCDXX'
+// console.log(integerToRoman(123));   // Output: 'CXXIII'
+// console.log(integerToRoman(3420));  // Output: 'MMMCDXX'
 
 
-// Initial Setup
-// Input Number: 1999
-// Roman Symbols Array: Ordered from largest to smallest values.
-// Iteration Details
-// 1. Symbol: 'M' (1000)
-// Check: 1999 >= 1000 (True)
-// Action: Append M to result, subtract 1000 from num.
-// Updated result: 'M'
-// Updated num: 1999 - 1000 = 999
-// Check Again: 999 >= 1000 (True)
-// Action: Append another M to result, subtract 1000 from num.
-// Updated result: 'MM'
-// Updated num: 999 - 1000 = -1
-// Check: -1 >= 1000 (False)
-// End of Symbol 'M' Iteration.
-// 2. Symbol: 'CM' (900)
-// Check: 999 >= 900 (True)
-// Action: Append CM to result, subtract 900 from num.
-// Updated result: 'MMC'
-// Updated num: 999 - 900 = 99
-// Check Again: 99 >= 900 (False)
-// End of Symbol 'CM' Iteration.
-// 3. Symbol: 'D' (500)
-// Check: 99 >= 500 (False)
-// Action: Skip this symbol.
-// End of Symbol 'D' Iteration.
-// 4. Symbol: 'CD' (400)
-// Check: 99 >= 400 (False)
-// Action: Skip this symbol.
-// End of Symbol 'CD' Iteration.
-// 5. Symbol: 'C' (100)
-// Check: 99 >= 100 (False)
-// Action: Skip this symbol.
-// End of Symbol 'C' Iteration.
-// 6. Symbol: 'XC' (90)
-// Check: 99 >= 90 (True)
-// Action: Append XC to result, subtract 90 from num.
-// Updated result: 'MMCMXC'
-// Updated num: 99 - 90 = 9
-// Check Again: 9 >= 90 (False)
-// End of Symbol 'XC' Iteration.
-// 7. Symbol: 'L' (50)
-// Check: 9 >= 50 (False)
-// Action: Skip this symbol.
-// End of Symbol 'L' Iteration.
-// 8. Symbol: 'XL' (40)
-// Check: 9 >= 40 (False)
-// Action: Skip this symbol.
-// End of Symbol 'XL' Iteration.
-// 9. Symbol: 'X' (10)
-// Check: 9 >= 10 (False)
-// Action: Skip this symbol.
-// End of Symbol 'X' Iteration.
-// 10. Symbol: 'IX' (9)
-// Check: 9 >= 9 (True)
-// Action: Append IX to result, subtract 9 from num.
-// Updated result: 'MMCMXCIX'
-// Updated num: 9 - 9 = 0
-// Check Again: 0 >= 9 (False)
-// End of Symbol 'IX' Iteration.
-// 11. Symbol: 'V' (5)
-// Check: 0 >= 5 (False)
-// Action: Skip this symbol.
-// End of Symbol 'V' Iteration.
-// 12. Symbol: 'IV' (4)
-// Check: 0 >= 4 (False)
-// Action: Skip this symbol.
-// End of Symbol 'IV' Iteration.
-// 13. Symbol: 'I' (1)
-// Check: 0 >= 1 (False)
-// Action: Skip this symbol.
-// End of Symbol 'I' Iteration.
-// Final Result
-// The final Roman numeral representation for the number 1999 is 'MMCMXCIX'.
+
+// Detailed Iteration for 1999:
+// 1st Iteration (M - 1000):
+// Symbol: 'M', Value: 1000.
+// Check: 1999 >= 1000 → true.
+// Action: Append 'M' to result and subtract 1000 from num.
+// Result: result = 'M', num = 999.
+
+// 2nd Iteration (CM - 900):
+// Symbol: 'CM', Value: 900.
+// Check: 999 >= 900 → true.
+// Action: Append 'CM' to result and subtract 900 from num.
+// Result: result = 'MCM', num = 99.
+
+// 3rd Iteration (D - 500):
+// Symbol: 'D', Value: 500.
+// Check: 99 >= 500 → false.
+// Action: Skip this iteration (no change in result or num).
+
+// 4th Iteration (CD - 400):
+// Symbol: 'CD', Value: 400.
+// Check: 99 >= 400 → false.
+// Action: Skip this iteration.
+
+// 5th Iteration (C - 100):
+// Symbol: 'C', Value: 100.
+// Check: 99 >= 100 → false.
+// Action: Skip this iteration.
+
+// 6th Iteration (XC - 90):
+// Symbol: 'XC', Value: 90.
+// Check: 99 >= 90 → true.
+// Action: Append 'XC' to result and subtract 90 from num.
+// Result: result = 'MCMXC', num = 9.
+// 7th Iteration (L - 50):
+// Symbol: 'L', Value: 50.
+// Check: 9 >= 50 → false.
+// Action: Skip this iteration.
+// 8th Iteration (XL - 40):
+// Symbol: 'XL', Value: 40.
+// Check: 9 >= 40 → false.
+// Action: Skip this iteration.
+// 9th Iteration (X - 10):
+// Symbol: 'X', Value: 10.
+// Check: 9 >= 10 → false.
+// Action: Skip this iteration.
+// 10th Iteration (IX - 9):
+// Symbol: 'IX', Value: 9.
+// Check: 9 >= 9 → true.
+// Action: Append 'IX' to result and subtract 9 from num.
+// Result: result = 'MCMXCIX', num = 0.
+// Remaining Iterations:
+// For symbols 'V' (5), 'IV' (4), and 'I' (1), the check will fail because num is now 0. The loop will skip these iterations.
+// Final Output:
+// The result after all iterations is 'MCMXCIX', which is the Roman numeral representation of 1999.
