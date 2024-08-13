@@ -47,6 +47,7 @@ function removeOccurrences(str) {
 
 
 // Key Points:
+//==============================================
 // Purpose of prevResult:
 
 // prevResult stores the state of the result string from the previous iteration of the loop.
@@ -91,3 +92,14 @@ function removeOccurrences(str) {
 // Repeat or Exit:
 // If the condition evaluates to true, the loop continues, and the code block is executed again.
 // If the condition evaluates to false, the loop exits, and control moves to the code following the loop.
+
+
+
+// Why Declare prevResult Outside the Loop?
+// =========================================  
+// Initialization Before Loop Execution:
+
+// prevResult needs to be initialized to a value before the loop starts. This initialization is done outside the loop so that it has a valid value for comparison when the loop first executes.
+// Maintain State Across Iterations:
+
+// By declaring prevResult outside the loop, you ensure that its value persists across multiple iterations. This allows the loop to compare the result string's state from the end of the previous iteration to its state at the beginning of the current iteration.
