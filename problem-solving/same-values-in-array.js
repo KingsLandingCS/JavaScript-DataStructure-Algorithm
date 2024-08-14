@@ -2,9 +2,9 @@ function countOccurrences(arr) {
     const Occurrences = {};
     for (let i = 0; i < arr.length; i++) {
         const num = arr[i];
-        if (Occurrences.hasOwnProperty(num)) {
+        if (Occurrences.hasOwnProperty(num)) {   // check if the key is in the object
             Occurrences[num]++;
-        } else {
+        } else {                                // otherwise set the key
             Occurrences[num] = 1;
         }
     }
