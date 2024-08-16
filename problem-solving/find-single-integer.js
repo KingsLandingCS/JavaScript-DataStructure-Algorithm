@@ -6,6 +6,9 @@ function findSingle(arr) {
     return result;
 }
 
+console.log(findSingle([10,2,2,1,0,0,10]));
+
+
 
 // What is XOR?
 // XOR stands for "exclusive OR." It's a way to compare two numbers (specifically their binary forms) and decide a new number based on a simple rule.
