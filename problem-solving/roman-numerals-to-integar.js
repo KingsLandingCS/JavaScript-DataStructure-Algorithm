@@ -18,11 +18,10 @@ function integerToRoman(num) {
 
     // Initialize the result string
     let result = '';
-
     // Loop through each symbol, from largest to smallest
     for (let i = 0; i < romanSymbols.length; i++) {
         const { value, symbol } = romanSymbols[i];   // Extract the value and symbol's values from the current object key
-        console.log(`Symbol: '${symbol}' (${value})\n`);
+        console.log(`Symbol: '${symbol}' Value: (${value})\n`);
 
 
         // Append the symbol to the result string while subtracting its value from num
