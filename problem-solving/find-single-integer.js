@@ -1,12 +1,14 @@
 function findSingle(arr) {
     let result = 0;
     for (let i = 0; i < arr.length; i++) {
-        result ^= arr[i];
+        result ^= arr[i]; // XOR operation  Property of XOR: XOR has a special property where a number XORed with itself results in 0 (e.g., 2 ^ 2 = 0), and any number XORed with 0 remains unchanged (e.g., 10 ^ 0 = 10).
+        console.log(`After XOR with ${arr[i]}, result = ${result}`);
     }
+    console.log(`The number that appears only once is: ${result}`);
     return result;
 }
 
-console.log(findSingle([10,2,2,1,0,0,10]));
+console.log(findSingle([10, 2, 2, 1, 0, 0, 10]));
 
 
 
@@ -99,3 +101,56 @@ console.log(findSingle([10,2,2,1,0,0,10]));
 // Explanation:
 
 // XOR result (which is 11) with 10. The previous 10 is canceled out by this 10 (because 10 ^ 10 = 0), and the remaining value is 1.
+
+
+
+
+// Let's break down how XOR (^) works in this case with the numbers 10 and 2.
+
+// Step-by-Step XOR Calculation
+// Convert 10 and 2 to Binary:
+
+// 10 in binary is 1010.
+// 2 in binary is 0010.
+// Align the Binary Numbers:
+
+// csharp
+// Copy code
+// 1010  (This is 10)
+// 0010 
+
+
+
+// Step-by-Step XOR Calculation for 8 ^ 2
+// Convert 8 and 2 to Binary:
+
+// 8 in binary is 1000.
+// 2 in binary is 0010.
+// Align the Binary Numbers:
+
+
+// Copy code
+// 1000  (This is 8)
+// 0010  (This is 2)
+// Apply XOR Bit by Bit:
+
+// XOR each corresponding bit from the two numbers:
+// vbnet
+// Copy code
+// 1 XOR 0 = 1
+// 0 XOR 0 = 0
+// 0 XOR 1 = 1
+// 0 XOR 0 = 0
+// When you XOR 1000 with 0010, you get 1010.
+
+// Result in Binary:
+
+// 1010 in binary is the result of 8 XOR 2.
+// Convert the Result Back to Decimal:
+
+// 1010 in binary equals 10 in decimal.
+// Explanation Recap:
+// XOR compares each bit of the two numbers.
+// If the bits are the same, the result is 0.
+// If the bits are different, the result is 1.
+// Thus, when you XOR 8 (1000 in binary) with 2 (0010 in binary), the result is 10 (1010 in binary).
