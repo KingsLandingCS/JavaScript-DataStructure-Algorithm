@@ -8,7 +8,7 @@ count.counter = 0;
 
 // Implement the reset method to reset the counter
 count.reset = () => {
-    count.counter = 0;
+    return count.counter = 0;
 };
 
 // Example usage:
