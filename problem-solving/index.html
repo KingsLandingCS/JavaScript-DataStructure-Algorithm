@@ -18,10 +18,12 @@
 
         Object.defineProperty(formObject, "name", {
             get() {                       // Getter
-                return nameInput.value;  // Return the value of the input field
+                // return nameInput.value;  // Return the value of the input field
+                console.log(formObject.name);  // Logs the current value of the input field
             },
             set(value) { // Setter
                 nameInput.value = value; // Set the value of the input field
+                formObject.name = 'Bob';  // Changes the input field value to 'Bob'
             }
         })
 
