@@ -17,11 +17,13 @@
         const formObject = {};
 
         Object.defineProperty(formObject, "name", {
-            get() {                       // Getter
-                // return nameInput.value;  // Return the value of the input field
-                console.log(formObject.name);  // Logs the current value of the input field
+
+            get() {                       // Getter Method
+                return nameInput.value;  // Return the value of the input field
+                // console.log(formObject.name);  // Logs the current value of the input field
             },
-            set(value) { // Setter
+
+            set(value) { // Setter Method
                 nameInput.value = value; // Set the value of the input field
                 // formObject.name = 'Bob';  // Changes the input field value to 'Bob'
             }
@@ -32,6 +34,14 @@
 
 </html>
 
+<!-- Setting the Input Field Value:
+
+javascript
+Copy code
+nameInput.value = value;
+Inside the setter method, nameInput.value = value; takes the value argument (e.g., 'John') and assigns it to the value property of the nameInput HTML element (which is the input field).
+In simpler terms, this line of code changes the text in the input field to whatever the new value is.
+So if formObject.name = 'John'; is called, this will update the input field to display "John". -->
 
 
 <!-- Step 2: Input Field
