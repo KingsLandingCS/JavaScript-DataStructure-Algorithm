@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Way Binding Example</title>
+</head>
+
+<body>
+    <label for="">name</label>
+    <input type="text" id="inputField" />
+
+    <!-- Link to the external JavaScript file -->
+    <script>
+        const nameInput = document.getElementById("inputField");
+        const formObject = {};
+
+        Object.defineProperty(formObject, "name", {
+            get() {
+                return nameInput.value;
+            },
+            set(value) {
+                nameInput.value = value;
+            }
+        })
+
+    </script>
+</body>
+
+</html>
