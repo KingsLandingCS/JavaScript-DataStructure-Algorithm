@@ -17,11 +17,11 @@
         const formObject = {};
 
         Object.defineProperty(formObject, "name", {
-            get() {
-                return nameInput.value;
+            get() {                       // Getter
+                return nameInput.value;  // Return the value of the input field
             },
-            set(value) {
-                nameInput.value = value;
+            set(value) { // Setter
+                nameInput.value = value; // Set the value of the input field
             }
         })
 
@@ -29,3 +29,85 @@
 </body>
 
 </html>
+
+
+
+<!-- Step 2: Input Field
+html
+Copy code
+<input type="text" id="inputField" />
+This is a simple HTML input field where a user can type something. The input field has an id of inputField which allows
+JavaScript to access it later.
+Step 3: JavaScript Starts
+Inside the
+<script> tags, JavaScript code interacts with the input field.
+
+        Step 4: Selecting the Input Field
+    javascript
+Copy code
+    const nameInput = document.getElementById("inputField");
+This line selects the input field by its id using document.getElementById() and stores it in the variable nameInput.Now, nameInput represents the HTML input field in JavaScript.
+        Step 5: Creating an Empty Object
+    javascript
+Copy code
+    const formObject = {};
+An empty object called formObject is created.This object will be used to store the "name" property, which will be connected to the input field through two - way binding(i.e., changes in the object will reflect in the input field and vice versa).
+        Step 6: Defining the Property with Object.defineProperty
+javascript
+Copy code
+    Object.defineProperty(formObject, "name", {
+        get() {
+            return nameInput.value;
+        },
+        set(value) {
+            nameInput.value = value;
+        }
+    });
+    Here’s what happens in this block of code:
+
+    Object.defineProperty(formObject, "name", { ...}):
+
+This function is used to define a new property(name) on the formObject object.
+The property "name" is created, but instead of just holding a simple value, it gets custom getter(get) and setter(set) methods.
+        Getter(get()):
+
+    javascript
+Copy code
+    get() {
+        return nameInput.value;
+    }
+This function is called whenever you try to access the formObject.name property(e.g., console.log(formObject.name)).
+The getter returns the current value of the input field(nameInput.value), which is whatever the user has typed into the input field.
+        Setter(set()):
+
+    javascript
+Copy code
+    set(value) {
+        nameInput.value = value;
+    }
+This function is called whenever you try to set the formObject.name property(e.g., formObject.name = 'John').
+The setter takes the value you assign to formObject.name and updates the input field’s value(nameInput.value) with that value.So, if you set formObject.name = 'John', it will change the input field’s value to "John".
+        Step 7: Summary of How It Works
+The formObject.name property is linked to the input field(nameInput).
+When you read formObject.name, it returns the current value of the input field.
+When you set formObject.name, it updates the input field's value to the value you assign.
+This creates a simple two - way binding between formObject.name and the input field: changes to one will automatically reflect in the other.
+Example Usage
+    Here’s how you might use the formObject.name property in practice:
+
+Reading the Input Field Value:
+
+    javascript
+Copy code
+    console.log(formObject.name);  // Logs the current value of the input field
+If the user has typed "Alice" into the input field, this will log "Alice".
+Updating the Input Field Value via JavaScript:
+
+    javascript
+Copy code
+    formObject.name = 'Bob';  // Changes the input field value to 'Bob'
+This will change the value in the input field to "Bob".
+        Conclusion
+    Object.defineProperty allows you to define a custom property(name) with getter and setter methods on the formObject object.
+The getter returns the value of the input field, and the setter updates the input field’s value.
+This setup creates a two - way binding between the JavaScript object(formObject.name) and the HTML input field(nameInput). -->
