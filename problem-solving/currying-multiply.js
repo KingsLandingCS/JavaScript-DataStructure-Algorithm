@@ -7,3 +7,6 @@ let multiply = function (x) {
 let multiplyByTwo = multiply(2);
 multiplyByTwo(3);
 
+let multiplyByThree = multiply(3);
+multiplyByThree(10);
+
